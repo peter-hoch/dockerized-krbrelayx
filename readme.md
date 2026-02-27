@@ -1,4 +1,4 @@
-# dockerized creddump7
+# dockerized krbrelax
 
 
 ## Disclaimer
