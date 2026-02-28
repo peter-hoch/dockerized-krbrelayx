@@ -18,6 +18,15 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install tzdata; \
     echo "\nPATH=\$PATH:/opt/krbrelayx/\n" >> /root/.bashrc; \
     echo "\nPATH=\$PATH:/opt/impacket/examples/\n" >> /root/.bashrc
 
+RUN git clone https://github.com/skelsec/minikerberos; \
+    pip3 install -I git+https://github.com/wbond/oscrypto.git --break-system-packages; \
+    git clone https://github.com/dirkjanm/PKINITtools; \
+    chmod +x /opt/PKINITtools/*.py; \
+    echo "\nPATH=\$PATH:/opt/PKINITtools/\n" >> /root/.bashrc
+
+WORKDIR /opt/minikerberos
+
+RUN python3 setup.py install
 
 CMD [ "/bin/bash" ]
 

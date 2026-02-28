@@ -1,1 +1,1 @@
-petersdockerid0815/dockerized-krbrelayx:1.0
+petersdockerid0815/dockerized-krbrelayx:2.0
